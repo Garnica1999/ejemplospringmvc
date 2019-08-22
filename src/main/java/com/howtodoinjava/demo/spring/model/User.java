@@ -2,7 +2,6 @@ package com.howtodoinjava.demo.spring.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -13,13 +12,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 //NOMBRE DE LA TABLA
-@Table(name = "TBL_USERS")
+@Table(name = "tbl_users")
 public class User {
 
    @Id
-   @GeneratedValue
+   //@GeneratedValue//AUTOMATICAMENTE GENERA UNA SECUENCIA PARA AUTOINCREMENT
    @Column(name = "USER_ID")
-   private Long id;
+   private Long id=0L;
 
    @Column(name = "USER_NAME")
    @Size(max = 20, min = 3, message = "{user.name.invalid}")

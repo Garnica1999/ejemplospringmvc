@@ -1,3 +1,4 @@
+com\howtodoinjava\demo\spring\controller\HomeController.class
 com\howtodoinjava\demo\spring\model\User.class
 com\howtodoinjava\demo\spring\service\UserServiceImp.class
 com\howtodoinjava\demo\spring\config\WebMvcConfig.class

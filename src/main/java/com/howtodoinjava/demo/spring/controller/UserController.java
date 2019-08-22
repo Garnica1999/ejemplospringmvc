@@ -14,14 +14,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.howtodoinjava.demo.spring.model.User;
 import com.howtodoinjava.demo.spring.service.UserService;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
         //PAGINA DE USER
-	@GetMapping("/")
+	@GetMapping("/editUser")
 	public String userForm(Locale locale, Model model) {
 		model.addAttribute("users", userService.list());
                 //NOMBRE DE LA VISTA QUE RETORNA
@@ -44,6 +46,6 @@ public class UserController {
 
 		userService.save(user);
                 //REDIRECCIONA AL PRINCIPAL
-		return "redirect:/";
+		return "redirect:/user/editUser";
 	}
 }
